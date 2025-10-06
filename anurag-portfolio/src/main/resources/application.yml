@@ -1,0 +1,39 @@
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+      database: ${MONGODB_DATABASE:anurag_portfolio} # default value if not set
+      auto-index-creation: true
+  main:
+    allow-circular-references: true
+    logging:
+      level:
+        org.mongodb.driver: DEBUG
+  application:
+    name: anurag-portfolio
+
+  mvc:
+    view:
+      suffix: .html
+      prefix: classpath:/templates/
+
+server:
+  port: ${PORT:8080} # default 8080
+  servlet:
+    context-path: /Anurag
+  devtools:
+    livereload:
+      enabled: true
+
+
+mail:
+  host: smtp.gmail.com
+  port: 587
+  username: ${MAIL_USERNAME}
+  password:  ${MAIL_PASSWORD}
+  properties:
+    mail:
+      smtp:
+        auth: true
+        starttls:
+          enable: true

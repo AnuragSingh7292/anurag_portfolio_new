@@ -1,0 +1,913 @@
+<!-- templates/portfolio.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Anurag Singh - Portfolio</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/portfolio.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+</head>
+
+<body>
+
+<!--&lt;!&ndash; Header &ndash;&gt;-->
+<!--<header th:replace="~{header.html :: header}"></header>-->
+
+<!-- templates/fragments/header.html -->
+<div class="navbar">
+    <div class="container">
+        <div class="logo"><a href="/Anurag/">< Anurag<span>/ Singh ></span></a></div>
+        <nav id="section-link">
+            <ul class="nav-links">
+                <li class="nav-item"><a href="#hero"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li class="nav-item"><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li class="nav-item"><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+                <li class="nav-item"><a href="#projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+                <li class="nav-item"><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger Button -->
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Main Content Area -->
+<main id="main" class="main-section">
+
+    <!-- Hero Section (First Section) -->
+    <section id="hero" class="hero-section">
+        <div class="hero-text">
+            <h1>I'm <span id="spanname"> Anurag </span> Singh Rajput</h1>
+            <p class="tagline" id="tagline"></p>
+
+            <p class="description" >
+                A passionate software developer with expertise in Java, Python, Spring Boot, and full-stack web development.
+                Experienced in building scalable applications, secure authentication systems, and AI-driven solutions.
+                Skilled in applying data structures, algorithms, and machine learning models to solve real-world problems.
+                I enjoy designing efficient, user-friendly applications and continuously improving my technical expertise.
+            </p>
+
+            <div class="parent">
+                <a id="resume" href="https://drive.google.com/drive/folders/1nBG_MP0sY-JUQYCY6IGcR1ZykAPi4NJJ?usp=sharing">Resume</a>
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+                <div class="profile-image-container">
+                    <img th:src="@{/images/profile3.png}" alt="Anurag Singh" class="profile-img" />
+                    <div class="image-shadow"></div>
+                </div>
+        </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <!-- Left Column (60%) -->
+                <div class="about-left">
+                    <div class="about-text">
+                        <p>
+                            Hello! I'm <strong>Anurag Kumar</strong>, a curious mind and problem-solver who finds purpose in
+                            using technology to create meaningful impact. While my expertise lies in
+                            <b>Java, Python, Spring Boot, and full-stack development</b>, what drives me most is
+                            the challenge of turning ideas into <b>real, working solutions</b>.
+                        </p>
+
+                        <p>
+                            Over time, I have developed a deep interest in <b>software architecture, optimization,
+                            and intelligent systems</b>. I enjoy exploring how <b>AI, data-driven insights, and modern
+                            web technologies</b> can be combined to solve practical problems and deliver value.
+                            For me, every project is an opportunity to learn, experiment, and innovate.
+                        </p>
+
+                        <p>
+                            Beyond coding, I'm motivated by a long-term vision to grow into a role where I can
+                            contribute at scale as a <b>Software Development Engineer (SDE)</b> in top product-based
+                            companies like <b>Google, Microsoft, Amazon, or Infosys</b>. My focus is on building
+                            solutions that are not just functional, but <b>reliable, scalable, and globally impactful</b>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column (40%) -->
+                <div class="about-right">
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:anuragkumar824113@gmail.com">anuragkumar824113@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 7292948605</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                                <span>India</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Social Profiles -->
+                    <div class="social-profiles">
+                        <h3>Developer Profiles</h3>
+                        <div class="profile-links">
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/anuragkumar180/" target="_blank" title="LinkedIn">
+                                <img th:src="@{/images/linkedin-logo.png}" alt="LinkedIn" class="profile-icon">
+                            </a>
+
+                            <!-- GitHub -->
+                            <a href="https://github.com/AnuragSingh7292" target="_blank" title="GitHub">
+                                <img th:src="@{/images/github-logo.png}" alt="GitHub" class="profile-icon">
+                            </a>
+
+                            <!-- CodeChef -->
+                            <a href="https://www.codechef.com/users/anurag5180" target="_blank" title="CodeChef">
+                                <img th:src="@{/images/codechef-logo.png}" alt="CodeChef" class="profile-icon">
+                            </a>
+
+                            <!-- LeetCode -->
+                            <a href="https://leetcode.com/anuragsingh180/" target="_blank" title="LeetCode">
+                                <img th:src="@{/images/leetcode-logo.png}" alt="LeetCode" class="profile-icon">
+                            </a>
+
+                            <!-- GeeksForGeeks -->
+                            <a href="https://auth.geeksforgeeks.org/user/anuragkumrbm8/" target="_blank" title="GeeksForGeeks">
+                                <img th:src="@{/images/GFG-logo.png}" alt="GeeksForGeeks" class="profile-icon">
+                            </a>
+
+                            <!-- HackerEarth -->
+                            <a href="https://www.hackerearth.com/@anuragkumar824113" target="_blank" title="HackerEarth">
+                                <img th:src="@{/images/hackerEarth-logo.png}" alt="HackerEarth" class="profile-icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="section-title">Education Journey</h2>
+            <p class="section-subtitle">My Academic Achievements & Learning Path</p>
+
+            <div class="education-timeline">
+
+                <!-- Education Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="education-card">
+                            <div class="education-header">
+                                <h3 class="degree">Bachelor of Technology</h3>
+                                <span class="year">2022 - 2026</span>
+                            </div>
+                            <div class="institution">
+                                <i class="icon">
+                                    <img th:src="@{/images/vignan-logo.png}" alt="Vignan's University" class="university-icon">
+                                </i>
+                                <span>Vignan’s Foundation for Science, Technology & Research (Deemed to be University) </span>
+                            </div>
+                            <div class="details">
+                                <div class="percentage">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>8.13 CGPA</span>
+                                </div>
+                                <div class="branch">
+                                    <i class="fas fa-code"></i>
+                                    <span>Electronics Communication & Engineering</span>
+                                </div>
+                            </div>
+                            <div class="courses">
+                                <span class="course-tag">Data Structures</span>
+                                <span class="course-tag">Algorithms</span>
+                                <span class="course-tag">Machine Learning</span>
+                                <span class="course-tag">Web Development</span>
+                                <span class="course-tag">DBMS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="education-card">
+                            <div class="education-header">
+                                <h3 class="degree">Class XII (Senior Secondary)</h3>
+                                <span class="year">2020 - 2022</span>
+                            </div>
+                            <div class="institution">
+                                <i class="icon">
+                                    <img th:src="@{/images/magadh-logo.png}" alt="Magadh University" class="university-icon">
+                                </i>
+                                <span>Ankorha college</span>
+                            </div>
+                            <div class="details">
+                                <div class="percentage">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>67.6%</span>
+                                </div>
+                                <div class="branch">
+                                    <i class="fas fa-calculator"></i>
+                                    <span>Science with Mathematics</span>
+                                </div>
+                            </div>
+                            <div class="courses">
+                                <span class="course-tag">Physics</span>
+                                <span class="course-tag">Chemistry</span>
+                                <span class="course-tag">Mathematics</span>
+                                <span class="course-tag">English</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="education-card">
+                            <div class="education-header">
+                                <h3 class="degree">Class X (Secondary)</h3>
+                                <span class="year">2019 - 2020</span>
+                            </div>
+                            <div class="institution">
+                                <i class="fas fa-school" style="color: red;  font-size:20px; padding-right: 8px; margin-left: 6px"></i>
+                                <span>Raj Kiya Krit High School</span>
+                            </div>
+                            <div class="details">
+                                <div class="percentage">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>68.2%</span>
+                                </div>
+                                <div class="branch">
+                                    <i class="fas fa-book"></i>
+                                    <span>General Curriculum</span>
+                                </div>
+
+                            </div>
+                            <div class="courses">
+                                <span class="course-tag">Mathematics</span>
+                                <span class="course-tag">Science</span>
+                                <span class="course-tag">Social Science</span>
+                                <span class="course-tag">English</span>
+                                <span class="course-tag">Hindi</span>
+                                <span class="course-tag">Computer Applications</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Item 4 - Certifications -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="education-card">
+                            <div class="education-header">
+                                <h3 class="degree">Certifications & Courses</h3>
+                                <span class="year">2022 - 2025</span>
+                            </div>
+
+                            <div class="certifications">
+                                <a href="https://drive.google.com/file/d/1oNwWGliDQnYRQH5ZMmvpI6IFXEihIfzE/view?usp=sharing" target="_blank" class="cert-item">
+                                    <i class="fas fa-certificate" style="color: red"></i>
+                                    <span>Programming in Java - NPTEL (Top 5% Elite Silver Tag, Jan - Apr 2024)</span>
+                                </a>
+
+                                <a href="https://drive.google.com/file/d/1E0ixWgUbawSZogrQJNSlc337cwI-owy5/view?usp=sharing" target="_blank" class="cert-item">
+                                    <i class="fas fa-certificate" style="color: red"></i>
+                                    <span>Introduction to Artificial Intelligence - Infosys Springboard (Aug 2024)</span>
+                                </a>
+
+                                <a href="/Anurag/defaultpage.html" target="_blank" class="cert-item">
+                                    <i class="fas fa-certificate" style="color: red"></i>
+                                    <span>Cambridge English Certification (A2 Level) - Cambridge (Score: 131, June 2023)</span>
+                                </a>
+
+                                <a href="/Anurag/defaultpage.html" target="_blank" class="cert-item">
+                                    <i class="fas fa-certificate" style="color: red"></i>
+                                    <span>University-Level Hackathon 2023 - University Event</span>
+                                </a>
+
+                                <a href="/Anurag/defaultpage.html" target="_blank" class="cert-item">
+                                    <i class="fas fa-certificate" style="color: red"></i>
+                                    <span>Coordinator Certificate - Voice 2k25, Vignan University (May 2025)</span>
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">Technologies & Tools I Work With</p>
+
+            <div class="skills-grid">
+                <!-- Programming Languages -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Programming Languages</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/java-logo.png}" alt="Java" class="skill-icon">
+                                <span class="skill-name">Java</span>
+                            </div>
+                            <div class="skill-percentage">80%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/python-logo.png}" alt="Python" class="skill-icon">
+                                <span class="skill-name">Python</span>
+                            </div>
+                            <div class="skill-percentage">60%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/c-logo.png}" alt="C" class="skill-icon">
+                                <span class="skill-name">C</span>
+                            </div>
+                            <div class="skill-percentage">90%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/cpp-logo.png}" alt="C++" class="skill-icon">
+                                <span class="skill-name">C++ </span>
+                            </div>
+                            <div class="skill-percentage">50%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/js-logo.png}" alt="JavaScript" class="skill-icon">
+                                <span class="skill-name">JavaScript</span>
+                            </div>
+                            <div class="skill-percentage">55%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/php-logo.png}" alt="PHP" class="skill-icon">
+                                <span class="skill-name">PHP</span>
+                            </div>
+                            <div class="skill-percentage">60%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Technologies -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-globe"></i>
+                        <h3>Web Technologies</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/html-logo.png}" alt="HTML" class="skill-icon">
+                                <span class="skill-name">HTML</span>
+                            </div>
+                            <div class="skill-percentage">90%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/css-logo.png}" alt="CSS" class="skill-icon">
+                                <span class="skill-name">CSS</span>
+                            </div>
+                            <div class="skill-percentage">70%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/jsp-logo.png}" alt="JSP" class="skill-icon">
+                                <span class="skill-name">JSP</span>
+                            </div>
+                            <div class="skill-percentage">65%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/servlet-logo.png}" alt="Servlets" class="skill-icon">
+                                <span class="skill-name">Servlets</span>
+                            </div>
+                            <div class="skill-percentage">60%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Android Development -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Android Development</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/android-studio-logo.png}" alt="Android Studio" class="skill-icon">
+                                <span class="skill-name">Android Studio</span>
+                            </div>
+                            <div class="skill-percentage">65%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/xml-logo.png}" alt="XML Layouts" class="skill-icon">
+                                <span class="skill-name">XML Layouts</span>
+                            </div>
+                            <div class="skill-percentage">60%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/api-logo.png}" alt="REST API" class="skill-icon">
+                                <span class="skill-name">REST API Integration</span>
+                            </div>
+                            <div class="skill-percentage">70%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/recyclerview-logo.png}" alt="RecyclerView" class="skill-icon">
+                                <span class="skill-name">RecyclerView & Adapters</span>
+                            </div>
+                            <div class="skill-percentage">40%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/firebase-logo.png}" alt="Firebase" class="skill-icon">
+                                <span class="skill-name">Firebase</span>
+                            </div>
+                            <div class="skill-percentage">45%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/sqlite-logo.png}" alt="SQLite" class="skill-icon">
+                                <span class="skill-name">SQLite</span>
+                            </div>
+                            <div class="skill-percentage">70%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks & Libraries -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-cubes"></i>
+                        <h3>Frameworks & Libraries</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/spring-boot-logo.png}" alt="Spring Boot" class="skill-icon">
+                                <span class="skill-name">Spring Boot</span>
+                            </div>
+                            <div class="skill-percentage">65%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/numpy-logo.png}" alt="NumPy" class="skill-icon">
+                                <span class="skill-name">NumPy</span>
+                            </div>
+                            <div class="skill-percentage">70%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/tensorflow-logo.png}" alt="TensorFlow" class="skill-icon">
+                                <span class="skill-name">TensorFlow </span>
+                            </div>
+                            <div class="skill-percentage">40%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/keras-logo.png}" alt="Keras" class="skill-icon">
+                                <span class="skill-name">Keras </span>
+                            </div>
+                            <div class="skill-percentage">40%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/opencv-logo.png}" alt="OpenCV" class="skill-icon">
+                                <span class="skill-name">OpenCV </span>
+                            </div>
+                            <div class="skill-percentage">45%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Databases</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/sql-logo.png}" alt="SQL" class="skill-icon">
+                                <span class="skill-name">SQL</span>
+                            </div>
+                            <div class="skill-percentage">75%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/mysql-logo.png}" alt="MySQL" class="skill-icon">
+                                <span class="skill-name">MySQL</span>
+                            </div>
+                            <div class="skill-percentage">70%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/mongodb-logo.png}" alt="MongoDB" class="skill-icon">
+                                <span class="skill-name">MongoDB</span>
+                            </div>
+                            <div class="skill-percentage">65%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Tools & Technologies</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/git-logo.png}" alt="Git" class="skill-icon">
+                                <span class="skill-name">Git & GitHub</span>
+                            </div>
+                            <div class="skill-percentage">75%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/postman-logo.png}" alt="Postman" class="skill-icon">
+                                <span class="skill-name">Postman</span>
+                            </div>
+                            <div class="skill-percentage">70%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/intellij-logo.png}" alt="IntelliJ" class="skill-icon">
+                                <span class="skill-name">IntelliJ IDEA</span>
+                            </div>
+                            <div class="skill-percentage">80%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/vscode-logo.png}" alt="VS Code" class="skill-icon">
+                                <span class="skill-name">VS Code</span>
+                            </div>
+                            <div class="skill-percentage">85%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/colab-logo.png}" alt="Colab" class="skill-icon">
+                                <span class="skill-name">Google Colab</span>
+                            </div>
+                            <div class="skill-percentage">65%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/matlab-logo.png}" alt="MATLAB" class="skill-icon">
+                                <span class="skill-name">MATLAB</span>
+                            </div>
+                            <div class="skill-percentage">55%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/keil-logo.png}" alt="Keil" class="skill-icon">
+                                <span class="skill-name">Keil µVision 4.0</span>
+                            </div>
+                            <div class="skill-percentage">50%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Competencies -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>Core Competencies</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/DSA-logo.png}" alt="DSA" class="skill-icon">
+                                <span class="skill-name">Data Structures & Algorithms (DSA)</span>
+                            </div>
+                            <div class="skill-percentage">80%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/OOP-logo.png}" alt="OOP" class="skill-icon">
+                                <span class="skill-name">Object-Oriented Programming (OOP)</span>
+                            </div>
+                            <div class="skill-percentage">90%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/Problem-Solving.png}" alt="Problem Solving" class="skill-icon">
+                                <span class="skill-name">Problem Solving</span>
+                            </div>
+                            <div class="skill-percentage">....</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/Debugging-logo.png}" alt="Debugging" class="skill-icon">
+                                <span class="skill-name">Debugging</span>
+                            </div>
+                            <div class="skill-percentage">60%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital & Embedded Systems -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Digital & Embedded Systems</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/digital-electronics-logo.png}" alt="Digital Electronics" class="skill-icon">
+                                <span class="skill-name">Digital Electronics</span>
+                            </div>
+                            <div class="skill-percentage">70%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/microprocessor-logo.png}" alt="Microprocessors & Microcontrollers" class="skill-icon">
+                                <span class="skill-name">Microprocessors & Microcontrollers</span>
+                            </div>
+                            <div class="skill-percentage">65%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/signal-processing-logo.png}" alt="Signal Processing" class="skill-icon">
+                                <span class="skill-name">Signal Processing</span>
+                            </div>
+                            <div class="skill-percentage">60%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/antenna-logo.png}" alt="Antenna & RF Design" class="skill-icon">
+                                <span class="skill-name">Antenna & RF Design</span>
+                            </div>
+                            <div class="skill-percentage">50%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VLSI & CAD Tools -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>VLSI & CAD Tools</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/vlsi-logo.png}" alt="VLSI Design using Cadence" class="skill-icon">
+                                <span class="skill-name">VLSI Design using Cadence</span>
+                            </div>
+                            <div class="skill-percentage">60%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/Analog-Circuit-Design-logo.png}" alt="Analog Circuit Design" class="skill-icon">
+                                <span class="skill-name">Analog Circuit Design</span>
+                            </div>
+                            <div class="skill-percentage">60%</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <img th:src="@{/images/fpga-logo.png}" alt="FPGA Design" class="skill-icon">
+                                <span class="skill-name">FPGA Design</span>
+                            </div>
+                            <div class="skill-percentage">40%</div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Showcasing my technical skills and creative solutions</p>
+
+            <!-- Filter Tabs -->
+            <div class="project-filters">
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="android">Android</button>
+                <button class="filter-btn" data-filter="aiml">AI/ML</button>
+                <button class="filter-btn" data-filter="full-stack">Full Stack</button>
+                <button class="filter-btn" data-filter="java">Java</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projectsGrid">
+
+                <!--   Project 1  static demo  -->
+<!--             /*   <div class="project-card" data-category="web java">-->
+<!--                    <div class="project-header">-->
+<!--                        <h3 class="project-title">E-Commerce Platform</h3>-->
+<!--                        <span class="project-badge web">Web</span>-->
+<!--                    </div>-->
+<!--                    <p class="project-description">-->
+<!--                        A full-stack e-commerce solution built with Spring Boot and React. Features user authentication,-->
+<!--                        product catalog, shopping cart, and payment integration. Responsive design with modern UI/UX.-->
+<!--                    </p>-->
+<!--                    <div class="project-tech">-->
+<!--                        <span>Spring Boot</span>-->
+<!--                        <span>React</span>-->
+<!--                        <span>MySQL</span>-->
+<!--                        <span>Stripe API</span>-->
+<!--                    </div>-->
+<!--                    <div class="project-links">-->
+<!--                        <a href="#" class="project-link">-->
+<!--                            <i class="fas fa-external-link-alt"></i>-->
+<!--                            Live-->
+<!--                        </a>-->
+<!--                        <a href="#" class="project-link">-->
+<!--                            <i class="fab fa-github"></i>-->
+<!--                            GitHub-->
+<!--                        </a>-->
+<!--                        <button class="project-link read-more-btn" data-project="1">-->
+<!--                            <i class="fas fa-book-open"></i>-->
+<!--                            Read-->
+<!--                        </button>-->
+<!--                    </div>-->
+<!--                </div> */-->
+
+                <!--  dynamically load here all project -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+
+                <!-- Left Side - Illustration & Text -->
+                <div class="contact-info">
+                    <div class="contact-text">
+                        <h2 class="contact-title">💬 Get in Touch</h2>
+                        <p class="contact-description">
+                            Feel free to reach out for collaborations, project, career opportunities, or even just to connect.
+                            I'm always open to meaningful conversations and new challenges.
+                        </p>
+                        <div class="contact-details">
+                            <div class="contact-detail-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>anuragkumar824113@gmail.com</span>
+                            </div>
+                            <div class="contact-detail-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+91 7292948605</span>
+                            </div>
+                            <div class="contact-detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>India</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="illustration-container">
+                        <img th:src="@{/images/contact-illustration.png}" alt="Get in Touch" class="contact-illustration">
+                    </div>
+                </div>
+
+                <!-- Right Side - Contact Form -->
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            <i class="fas fa-user"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+                            <i class="fas fa-tag"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Have an opportunity, project, or collaboration in mind? Share it with me - let’s connect!"></textarea>
+                            <i class="fas fa-comment"></i>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+<!-- Footer -->
+<!--<footer th:replace="~{footer.html :: footer}"></footer>-->
+
+
+<footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    <p>&copy; 2025 Anurag Singh. All Rights Reserved.</p>
+                </div>
+                <div class="social-links">
+
+                    <a href="https://github.com/AnuragSingh7292" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/anuragkumar180/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                    </a>
+
+                    <a href="mailto:anuragkumar824113@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope fa-lg"></i>
+                    </a>
+
+                    <a href="/Anurag/defaultpage.html" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter fa-lg"></i>
+                    </a>
+
+                    <a href="https://instagram.com/anurag_singh_3264" target="_blank">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+
+                    <a href="/Anurag/defaultpage.html" target="_blank" aria-label="Blog">
+                        <i class="fas fa-blog fa-lg"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script th:src="@{/js/portfolio.js}"></script>
+<script th:src="@{/js/project.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    .project-details-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #e6e8f1;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hero Section */
+    .project-hero {
+      background: linear-gradient(135deg, #2563eb 0%, #7e22ce 100%);
+      color: white;
+      padding: 4rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      animation: float 20s infinite linear;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0) rotate(0deg); }
+      to { transform: translateY(-20px) rotate(360deg); }
+    }
+
+    .project-badge {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 0.6rem 1.8rem;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .project-title {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .project-short-info {
+      font-size: 1.3rem;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* Main Content */
+    .project-content {
+      padding: 3rem;
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    /* Sections */
+    .section {
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 16px;
+      border-left: 5px solid #2563eb;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .section h3 {
+      color: #1e293b;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-weight: 700;
+    }
+
+    .section h3 i {
+      color: #2563eb;
+      font-size: 1.3rem;
+      width: 30px;
+      text-align: center;
+    }
+
+    /* Description */
+    .description-text {
+      line-height: 1.8;
+      color: #475569;
+      font-size: 1.15rem;
+      text-align: justify;
+    }
+
+    /* Technologies Grid */
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .tech-item {
+      background: linear-gradient(135deg, #2563eb, #7e22ce);
+      color: white;
+      padding: 0.7rem 1.3rem;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+
+    .tech-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Links */
+    .links-container {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .project-link {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 2rem;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    }
+
+    .project-link:hover {
+      background: #1d4ed8;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    }
+
+    .project-link.github {
+      background: #333;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-link.github:hover {
+      background: #000;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Domain Tags */
+    .domain-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .domain-tag {
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 0.7rem 1.3rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .domain-tag:hover {
+      background: #d0d9ff;
+      transform: translateY(-2px);
+    }
+
+    /* Achievements List */
+    .achievements-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .achievements-list li {
+      padding: 1rem 0;
+      border-bottom: 1px solid #e2e8f0;
+      color: #475569;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    .achievements-list li:before {
+      content: "✓";
+      color: #10b981;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+    }
+
+    .achievements-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* Timeline & Status */
+    .timeline-status {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .timeline-item {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-3px);
+    }
+
+    .timeline-item h4 {
+      color: #64748b;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .timeline-item p {
+      color: #1e293b;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .status-badge {
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .status-completed {
+      background: #dcfce7;
+      color: #166534;
+      box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
+    }
+
+    .status-in-progress {
+      background: #fef3c7;
+      color: #92400e;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+    }
+
+    .status-planned {
+      background: #e5e7eb;
+      color: #374151;
+      box-shadow: 0 4px 15px rgba(107, 114, 128, 0.2);
+    }
+
+    /* Back Button */
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 2rem;
+      background: #64748b;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      margin-top: 2rem;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(100, 116, 139, 0.3);
+    }
+
+    .back-button:hover {
+      background: #475569;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(100, 116, 139, 0.4);
+    }
+
+    /* Mobile Responsive Design for Project Details */
+    @media (max-width: 768px) {
+      body {
+        padding: 0.5rem;
+      }
+
+      .project-details-container {
+        border-radius: 15px;
+        background: #e6e8f1;
+      }
+
+      .project-hero {
+        padding: 1.5rem;
+      }
+
+      .project-badge {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+      }
+
+      .project-title {
+        font-size: 1.9rem;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+      }
+
+      .project-short-info {
+        font-size: 0.95rem;
+        text-align: justify;
+        line-height: 1.5;
+      }
+
+      .project-content {
+        padding: 0.5rem;
+        gap: 1rem;
+      }
+
+      .section {
+        padding: 1rem 0.5rem;
+        border-radius: 12px;
+      }
+
+      .section h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        gap: 0.5rem;
+      }
+
+      .section h3 i {
+        font-size: 1rem;
+        width: 20px;
+      }
+
+      .description-text {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        text-align: justify;
+      }
+
+      .tech-grid,
+      .domain-list {
+        gap: 0.5rem;
+      }
+
+      .tech-item,
+      .domain-tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 15px;
+      }
+
+      .links-container {
+        gap: 0.8rem;
+        flex-direction: column;
+      }
+
+      .project-link {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+        border-radius: 8px;
+        justify-content: center;
+      }
+
+      .achievements-list li {
+        font-size: 0.9rem;
+        padding: 0.7rem 0;
+        gap: 0.5rem;
+      }
+
+      .achievements-list li:before {
+        font-size: 1rem;
+      }
+
+      .timeline-status {
+        gap: 0.8rem;
+      }
+
+      .timeline-item {
+        padding: 1rem;
+        border-radius: 8px;
+      }
+
+      .timeline-item h4 {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-item p {
+        font-size: 1rem;
+      }
+
+      .status-badge {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+
+      .back-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+
+  </style>
+
+</head>
+<body>
+<div class="project-details-container">
+  <!-- Hero Section -->
+  <div class="project-hero">
+    <span class="project-badge"></span>
+    <h1 class="project-title"></h1>
+    <p class="project-short-info"></p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="project-content">
+    <!-- Description Section -->
+    <div class="section">
+      <h3><i class="fas fa-file-alt"></i> Project Description</h3>
+      <p class="description-text"></p>
+    </div>
+
+    <!-- Technologies Section -->
+    <div class="section">
+      <h3><i class="fas fa-code"></i> Technologies Used</h3>
+      <div class="tech-grid"></div>
+    </div>
+
+    <!-- Project Links -->
+    <div class="section">
+      <h3><i class="fas fa-external-link-alt"></i> Project Links</h3>
+      <div class="links-container">
+        <a class="project-link live" target="_blank">
+          <i class="fas fa-external-link-alt"></i> Live Demo
+        </a>
+        <a class="project-link github" target="_blank">
+          <i class="fab fa-github"></i> GitHub Repository
+        </a>
+      </div>
+    </div>
+
+    <!-- Domain & Achievements -->
+    <div class="section">
+      <h3><i class="fas fa-layer-group"></i> Project Domain</h3>
+      <div class="domain-list"></div>
+    </div>
+
+    <div class="section">
+      <h3><i class="fas fa-trophy"></i> Key Achievements</h3>
+      <ul class="achievements-list"></ul>
+    </div>
+
+    <!-- Timeline & Status -->
+    <div class="section">
+      <h3><i class="fas fa-calendar-alt"></i> Project Timeline & Status</h3>
+      <div class="timeline-status">
+        <div class="timeline-item">
+          <h4>Start Date</h4>
+          <p class="start-date"></p>
+        </div>
+        <div class="timeline-item">
+          <h4>End Date</h4>
+          <p class="end-date"></p>
+        </div>
+        <div class="timeline-item">
+          <h4>Status</h4>
+          <p>
+            <span class="status-badge"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back Button -->
+    <a href="/Anurag/" class="back-button">
+      <i class="fas fa-arrow-left"></i> Back to Projects
+    </a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", async function () {
+    // Get projectId from URL
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get("id");
+
+    if (!projectId) {
+      document.body.innerHTML = "<h2>No project id found in URL</h2>";
+      return;
+    }
+
+    try {
+      // Fetch project by ID
+      const response = await fetch(`/Anurag/api/projects/${projectId}`);
+      if (!response.ok) throw new Error("Project not found");
+
+      const project = await response.json();
+      // Fill Hero Section
+      document.querySelector(".project-badge").textContent = project.badge;
+      document.querySelector(".project-title").textContent = project.title;
+      document.querySelector(".project-short-info").textContent = project.shortInfo;
+
+      // Description
+      document.querySelector(".description-text").textContent = project.description;
+
+      // Technologies
+      const techGrid = document.querySelector(".tech-grid");
+      techGrid.innerHTML = "";
+      project.technologies.forEach(tech => {
+        const span = document.createElement("span");
+        span.classList.add("tech-item");
+        span.textContent = tech;
+        techGrid.appendChild(span);
+      });
+
+      // Links
+      document.querySelector(".links-container .live").href = project.links.live;
+      document.querySelector(".links-container .github").href = project.links.github;
+
+      // Domain
+      const domainList = document.querySelector(".domain-list");
+      domainList.innerHTML = "";
+      project.domain.forEach(d => {
+        const span = document.createElement("span");
+        span.classList.add("domain-tag");
+        span.textContent = d;
+        domainList.appendChild(span);
+      });
+
+      // Achievements
+      const achievementsList = document.querySelector(".achievements-list");
+      achievementsList.innerHTML = "";
+      project.achievements.forEach(a => {
+        const li = document.createElement("li");
+        li.textContent = a;
+        achievementsList.appendChild(li);
+      });
+
+      // Timeline & Status
+      document.querySelector(".start-date").textContent = project.timeline.startDate;
+      document.querySelector(".end-date").textContent = project.timeline.endDate;
+      const statusBadge = document.querySelector(".status-badge");
+      statusBadge.textContent = project.status;
+      statusBadge.classList.add("status-" + project.status.toLowerCase());
+
+    } catch (error) {
+      console.error("Error loading project:", error);
+      document.body.innerHTML = "<h2>Failed to load project details</h2>";
+    }
+  });
+</script>
+</body>
+</html>
