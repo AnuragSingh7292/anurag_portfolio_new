@@ -14,9 +14,6 @@ public class MailConfig {
     @Value("${mail.username}")
     private String username;
 
-    @Value("${SENDGRID_API_KEY}")
-    private String apiKey;
-
     @Value("${mail.password}")
     private String password;
 
