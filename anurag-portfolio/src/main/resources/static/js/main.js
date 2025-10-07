@@ -178,7 +178,7 @@ form.addEventListener('submit', async (e) => {
 
         const result = await response.text(); // get the response message
 
-        if (result === "true") {
+        if (result === "True") {
             // Show success notification
             notification.classList.add('success');
             notification.querySelector('.notification-text').textContent = 'Message sent successfully!';
@@ -199,6 +199,7 @@ form.addEventListener('submit', async (e) => {
                 hideNotification();
             }, 2000);
         }
+
 
     } catch (error) {
         console.error('Error sending feedback:', error);
