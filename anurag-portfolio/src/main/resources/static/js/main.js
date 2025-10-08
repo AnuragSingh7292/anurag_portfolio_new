@@ -175,9 +175,7 @@ form.addEventListener('submit', async (e) => {
             },
             body: JSON.stringify(data)
         });
-
         const result = await response.text(); // get the response message
-
         if (result === "True") {
             // Show success notification
             notification.classList.add('success');

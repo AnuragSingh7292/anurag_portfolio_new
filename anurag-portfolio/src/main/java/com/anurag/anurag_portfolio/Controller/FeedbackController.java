@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("user/api/feedback")
+@RequestMapping("/user/api/feedback")
 public class FeedbackController {
 
     @Autowired
@@ -50,15 +50,29 @@ public class FeedbackController {
 
 
     @PostMapping
-    public String submitFeedback(@RequestBody Feedback feedback)
-    {
+    public String submitFeedback(@RequestBody Feedback feedback) {
         try {
+            // 1️⃣ Save immediately
             feedBackService.save(feedback);
+
+            // 2️⃣ Prepare email content
+            String htmlBody = "<h2>New Feedback Received</h2>"
+                    + "<p><strong>Name:</strong> " + feedback.getName() + "</p>"
+                    + "<p><strong>Email:</strong> " + feedback.getEmail() + "</p>"
+                    + "<p><strong>Subject:</strong> " + feedback.getSubject() + "</p>"
+                    + "<p><strong>Message:</strong><br/>" + feedback.getMessage() + "</p>";
+
+            // 3️⃣ Send email asynchronously (non-blocking)
+            emailService.sendHtmlEmail(emailAddress,
+                    "New Feedback from " + feedback.getName(),
+                    htmlBody);
+
+            // 4️⃣ Return response immediately
+            return "True";
+        } catch (Exception e) {
+            return "False";
         }
-        catch (Exception e) {
-            return  "False";
-        }
-        return "True";
     }
+
 }
 
