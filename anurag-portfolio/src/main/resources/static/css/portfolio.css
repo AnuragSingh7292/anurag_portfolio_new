@@ -366,7 +366,9 @@ section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-top: 100px;
 }
+
 
 .about-text p {
     color: #475569;
@@ -376,6 +378,136 @@ section {
     max-width: 800px;
     padding: 3px 10px 6px 50px;
     font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* Work Experience */
+.work-experience {
+    border-radius: 10px;
+    padding: 20px 2px 2px 20px;
+    margin: 5px 0 5px 28px;
+    /*background-color: red;*/
+}
+
+.work-experience h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.work-experience h3 i {
+    margin-right: 10px;
+    color: #1094e8;
+}
+
+.experience-item {
+    margin-bottom: 20px;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.job-title {
+    font-weight: 700;
+    color: #1e2b38;
+    font-size: 1.1rem;
+}
+
+.company {
+    color: #0f94f1;
+    font-weight: 600;
+}
+
+.duration {
+    color: #019dff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.experience-details {
+    color: #060611;
+    margin-top: 10px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tech-tag {
+    color: #2c3e50;
+    padding: 5px 12px;
+    background: linear-gradient(135deg, #15eb08, #0de064);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .work-experience {
+        border-radius: 10px;
+        padding: 10px 0 0 0px;
+        margin: 0;
+    }
+    .experience-header {
+        display: flex;
+        justify-content: space-between; /* left and right alignment */
+        align-items: center;            /* vertically center items */
+        width: 100%;
+    }
+
+    .experience-header .job-title {
+        display: block;
+        font-weight: 600;
+        font-size: 1.05rem;
+    }
+
+    .experience-header .company {
+        margin-left: 1px;
+        font-weight: 500;
+    }
+
+    .experience-header .duration {
+        margin-top: 28px;
+        padding: 0;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    .experience-details {
+        color: #060611;
+        margin-top: 10px;
+    }
+
+    .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .tech-tag {
+        color: #2c3e50;
+        padding: 5px 12px;
+        background: linear-gradient(135deg, #15eb08, #0de064);
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+
 }
 
 /* contact info */
@@ -554,6 +686,10 @@ section {
     .about-section .about-right {
         flex: 1 1 100%;
         width: 100%;
+    }
+    .about-section .about-right
+    {
+        margin: 0;
     }
 
     .about-section .about-text p {
