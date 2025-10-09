@@ -55,19 +55,20 @@ public class FeedbackController {
             // 1️⃣ Save immediately
             feedBackService.save(feedback);
 
-            // 2️⃣ Prepare email content
-            String htmlBody = "<h2>New Feedback Received</h2>"
-                    + "<p><strong>Name:</strong> " + feedback.getName() + "</p>"
-                    + "<p><strong>Email:</strong> " + feedback.getEmail() + "</p>"
-                    + "<p><strong>Subject:</strong> " + feedback.getSubject() + "</p>"
-                    + "<p><strong>Message:</strong><br/>" + feedback.getMessage() + "</p>";
+            // // 2️⃣ Prepare email content
+            // String htmlBody = "<h2>New Feedback Received</h2>"
+            //         + "<p><strong>Name:</strong> " + feedback.getName() + "</p>"
+            //         + "<p><strong>Email:</strong> " + feedback.getEmail() + "</p>"
+            //         + "<p><strong>Subject:</strong> " + feedback.getSubject() + "</p>"
+            //         + "<p><strong>Message:</strong><br/>" + feedback.getMessage() + "</p>";
 
-            // 3️⃣ Send email asynchronously (non-blocking)
-            emailService.sendHtmlEmail(emailAddress,
-                    "New Feedback from " + feedback.getName(),
-                    htmlBody);
+            // // 3️⃣ Send email asynchronously (non-blocking)
+            // emailService.sendHtmlEmail(emailAddress,
+            //         "New Feedback from " + feedback.getName(),
+            //         htmlBody);
 
-            // 4️⃣ Return response immediately
+        
+            // // 4️⃣ Return response immediately
             return "True";
         } catch (Exception e) {
             return "False";
