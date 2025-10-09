@@ -54,7 +54,6 @@ fetch('/Anurag/api/projects/all') // Replace with your Spring Boot API endpoint
 document.addEventListener("click", function (e) {
     if (e.target.closest(".read-more-btn")) {
         const projectId = e.target.closest(".read-more-btn").dataset.project;
-        console.log(projectId);
         window.location.href = `project.html?id=${projectId}`;
     }
 });
