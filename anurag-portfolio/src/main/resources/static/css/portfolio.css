@@ -1200,6 +1200,7 @@ section {
 }
 
 .skills-section .skill-percentage {
+    display: none;
     font-weight: 600;
     color: #2563eb;
     font-size: 0.9rem;
@@ -1219,6 +1220,7 @@ section {
 }
 
 .skills-section .skill-item:hover .skill-percentage {
+    display: block;
     background: #2563eb;
     color: white;
     transform: scale(1.05);
