@@ -435,6 +435,8 @@ section {
 .experience-details {
     color: #060611;
     margin-top: 10px;
+    text-align: justify;
+
 }
 
 .tech-stack {
